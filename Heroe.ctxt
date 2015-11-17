@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment1.params=
+comment1.target=void\ hundete()
+comment2.params=
+comment2.target=void\ muevete()
+comment3.params=
+comment3.target=void\ pierdeUnaVida()
+comment4.params=
+comment4.target=int\ dimeX()
+comment5.params=
+comment5.target=int\ dimeY()
+numComments=6
