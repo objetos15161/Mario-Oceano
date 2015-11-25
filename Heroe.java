@@ -9,12 +9,16 @@ import greenfoot.*;
 public class Heroe extends Actor
 {
     private int vidas = 3;
+    private int dir = 1;    //Dirección hacia la que está mirando el héroe. Se usará para determinar la dirección de sus disparos.
+    private WorldOceano mundo;
     
     public void act() 
     {
         muevete();
         hundete();
-        pierdeUnaVida();
+        dispara();
+        verificaAlcanzado();
+        dir = dimeDir();
     }    
     
     public void hundete()
@@ -32,14 +36,16 @@ public class Heroe extends Actor
         if(Greenfoot.isKeyDown("left"))
         {
             move(-3);
+            dir = 0;
             setImage("Mario Izq.png");
         }
         if(Greenfoot.isKeyDown("right"))
         {
             move(3);
+            dir = 1;
             setImage("Mario Der.png");
         }
-        if(Greenfoot.isKeyDown("a"))
+        if(Greenfoot.isKeyDown("up"))
         {
             y=y-3;
             setLocation(x, y);
@@ -51,6 +57,30 @@ public class Heroe extends Actor
             y=y+3;
             setLocation(x, y);
         }
+    }
+    
+    public int dimeDir()
+    {
+        return dir;
+    }
+    
+    public void verificaAlcanzado()
+    {
+        mundo = (WorldOceano)getWorld();
+        if(this.isTouching(Submarino.class))
+        {
+            mundo.heroeAlcanzado();
+        }
+    }
+    
+    public void dispara()
+    {
+        mundo = (WorldOceano)getWorld();
+        if(Greenfoot.isKeyDown("a"))
+            if(dir==0)
+                mundo.agregaDispIzq();
+            else if (dir==1)
+                mundo.agregaDispDer();
     }
     
     public void pierdeUnaVida()

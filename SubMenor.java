@@ -6,13 +6,14 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class SubMenor extends Actor
+public class SubMenor extends Submarino
 {
     private WorldOceano mundo;
     
     public void act() 
     {
-        sigue();
+        //sigue();
+        verificaAlcanzado();
     }    
     
     public void sigue()
@@ -25,10 +26,12 @@ public class SubMenor extends Actor
         yHeroe = mundo.obtenYDeHeroe();
         if ( xHeroe > getX() )
         {
+            setImage("SubMenor Der.png");
             setLocation( getX()+vel, getY() );
         }
         else if ( xHeroe < getX() )
         {
+            setImage("SubMenor Izq.png");
             setLocation( getX()-vel, getY() );
         }
         if ( yHeroe > getY() )
@@ -38,6 +41,15 @@ public class SubMenor extends Actor
         else if ( yHeroe < getY() )
         {
             setLocation( getX(), getY()-vel );
+        }
+    }
+    
+    public void verificaAlcanzado()
+    {
+        mundo = (WorldOceano)getWorld();
+        if(this.isTouching(Disparo.class))
+        {
+            mundo.removeObject(this);
         }
     }
 }

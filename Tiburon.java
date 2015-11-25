@@ -12,7 +12,8 @@ public class Tiburon extends Actor
     
     public void act() 
     {
-        sigue();
+        //sigue();
+        verificaAlcanzado();
     }    
     
     public void sigue()
@@ -25,10 +26,12 @@ public class Tiburon extends Actor
         yHeroe = mundo.obtenYDeHeroe();
         if ( xHeroe > getX() )
         {
+            setImage("Tiburón Der.png");
             setLocation( getX()+vel, getY() );
         }
         else if ( xHeroe < getX() )
         {
+            setImage("Tiburón Izq.png");
             setLocation( getX()-vel, getY() );
         }
         if ( yHeroe > getY() )
@@ -38,6 +41,15 @@ public class Tiburon extends Actor
         else if ( yHeroe < getY() )
         {
             setLocation( getX(), getY()-vel );
+        }
+    }
+    
+    public void verificaAlcanzado()
+    {
+        mundo = (WorldOceano)getWorld();
+        if(this.isTouching(Disparo.class))
+        {
+            mundo.removeObject(this);
         }
     }
 }

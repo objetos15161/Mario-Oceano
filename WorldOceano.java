@@ -17,26 +17,8 @@ public class WorldOceano extends World
     public WorldOceano()
     {    
         super(900, 600, 1); 
-//        construyeMenu();
+        Greenfoot.setWorld(new Menu());
         construyeNivel1();
-    }
-    
-    public void construyeMenu()
-    {
-        BotonInicio inicio;
-        BotonAyuda ayuda;
-        
-        inicio = new BotonInicio();
-        ayuda = new BotonAyuda();
-        setBackground("Fondo Menú.jpg");
-        addObject(inicio, 300, 400);
-        addObject(ayuda, 300, 500);
-/*
-        if(  )            ¿Condición para determinar el botón presionado?
-        {
-            construyeNivel1();
-        }
-*/
     }
     
     public void construyeNivel1()
@@ -50,7 +32,13 @@ public class WorldOceano extends World
         addObject(sma, 500, 500);
         addObject(sme, 850, 250);
         addObject(tib, 100, 550);
-        addObject(h, 150, 140);        
+        addObject(h, 150, 140);
+    }
+    
+    public void heroeAlcanzado()
+    {
+        h.pierdeUnaVida();
+        h.setLocation(150, 140);
     }
     
     public int obtenXDeHeroe()
@@ -67,5 +55,25 @@ public class WorldOceano extends World
         y = h.dimeY();
 
         return y;
+    }
+    
+    public void agregaDispIzq()
+    {
+        int x, y;
+        int vel=1;
+        
+        x = h.dimeX();
+        y = h.dimeY();
+        addObject(new DispIzq(), x, y);
+    }
+    
+    public void agregaDispDer()
+    {
+        int x, y;
+        int vel=1;
+        
+        x = h.dimeX();
+        y = h.dimeY();
+        addObject(new DispDer(), x, y);
     }
 }
