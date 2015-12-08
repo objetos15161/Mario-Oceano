@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment1.params=
+comment1.target=void\ muevete()
+comment1.text=\r\n\ Realizar\u00E1\ el\ movimiento\ hacia\ la\ derecha\ del\ disparo.\r\n
+comment2.params=
+comment2.target=void\ checaOrilla()
+comment2.text=\r\n\ Quitar\u00E1\ el\ disparo\ cuando\ \u00E9ste\ haya\ alcanzado\ la\ orilla\ del\ mundo.\r\n
+comment3.params=
+comment3.target=void\ eliminaObstaculos()
+numComments=4

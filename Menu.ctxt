@@ -1,9 +1,11 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Menu()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Menu.\r\n\ \r\n
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ Menu.\r\n
 comment1.params=
-comment1.target=void\ muestraBotones()
+comment1.target=void\ construyeMenu()
+comment1.text=\r\n\ Muestra\ los\ botones.\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Vigila\ cu\u00E1l\ de\ los\ botones\ se\ ha\ presionado\ con\ el\ mouse\ y\ realiza\ la\ acci\u00F3n\ correspondiente.\r\n
 numComments=3

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment1.params=
+comment1.target=void\ verificaOrilla()
+comment1.text=\r\n\ Retira\ del\ mundo\ a\ este\ objeto\ una\ vez\ que\ ha\ alcanzado\ el\ borde\ del\ mundo.\r\n
+comment2.params=
+comment2.target=void\ muevete()
+comment2.text=\r\n\ Realiza\ el\ movimiento\ del\ disparo.\r\n
+comment3.params=
+comment3.target=void\ encuentraAMario()
+comment3.text=\r\n\ Gira\ a\ este\ objeto\ para\ que\ vea\ hacia\ las\ coordenadas\ actuales\ de\ Mario.\r\n\ Se\ hace\ uso\ del\ temporizador\ 'aux'\ para\ que\ este\ objeto\ no\ gire\ continuamente\ y\ solo\ lo\ haga\ al\ entrar\ al\ mundo.\r\n
+numComments=4

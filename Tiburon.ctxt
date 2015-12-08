@@ -2,7 +2,12 @@
 comment0.params=
 comment0.target=void\ act()
 comment1.params=
-comment1.target=void\ sigue()
+comment1.target=void\ muevete()
+comment1.text=\r\n\ Movimiento\ del\ tibur\u00F3n.\r\n
 comment2.params=
-comment2.target=void\ verificaAlcanzado()
-numComments=3
+comment2.target=void\ verificaOrilla()
+comment2.text=\r\n\ El\ tibur\u00F3n\ cambiar\u00E1\ de\ direcci\u00F3n\ al\ toparse\ con\ un\ borde\ del\ mundo.\r\n\ Su\ im\u00E1gen\ cambiar\u00E1\ de\ acuerdo\ a\ la\ direcci\u00F3n\ en\ la\ que\ avance.\r\n
+comment3.params=
+comment3.target=void\ reaccionDisparo()
+comment3.text=\r\n\ Vigila\ si\ este\ enemigo\ ha\ sido\ alcanzado\ por\ un\ disparo\ del\ jugador,\ y\ realiza\ las\ acciones\ correspondientes.\r\n
+numComments=4

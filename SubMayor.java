@@ -1,55 +1,93 @@
 import greenfoot.*;
 
 /**
- * Write a description of class SubMayor here.
+ * Clase para el Submarino Mayor. Seguirá a Mario y le disparará.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Ulises Lara, Efrén Macías
+ * @version 30/Nov/2015
  */
 public class SubMayor extends Submarino
 {
-    private WorldOceano mundo;
+    private Oceano mundo;
+    private SimpleTimer tDisparo = new SimpleTimer(); // Temporizador para la frecuencia de los disparos.
     
     public void act() 
     {
-        //sigue();
-        verificaAlcanzado();
+        sigue();
+        dispara();
+        reaccionDisparo();
     }    
     
+    /**
+     * Método para hacer que el submarino sigua a Mario.
+     */
     public void sigue()
     {
-        int xHeroe, yHeroe, vel;
+        int vel=1;// Velocidad con la que se acercará este submarino a Mario.
+        mundo=(Oceano)getWorld();
         
-        vel = 2; //Establece la velocidad con que seguirá al héroe.
-        mundo = (WorldOceano)getWorld();
-        xHeroe = mundo.obtenXDeHeroe();
-        yHeroe = mundo.obtenYDeHeroe();
-        if ( xHeroe > getX() )
+        if(getY()>mundo.dimeYMario())
+        {
+            setLocation(getX(), getY()-vel);
+        }
+        if(getY()<mundo.dimeYMario())
+        {
+            setLocation(getX(), getY()+vel);
+        }
+        if(getX()<mundo.dimeXMario())
         {
             setImage("SubMayor Der.png");
-            setLocation( getX()+vel, getY() );
+            setLocation(getX()+vel, getY());
         }
-        else if ( xHeroe < getX() )
+        if(getX()>mundo.dimeXMario())
         {
             setImage("SubMayor Izq.png");
-            setLocation( getX()-vel, getY() );
-        }
-        if ( yHeroe > getY() )
-        {
-            setLocation( getX(), getY()+vel );
-        }
-        else if ( yHeroe < getY() )
-        {
-            setLocation( getX(), getY()-vel );
+            setLocation(getX()-vel, getY());
         }
     }
     
-    public void verificaAlcanzado()
+    /**
+     * Efectúa el disparo a Mario cada cierto tiempo.
+     */
+    public void dispara()
     {
-        mundo = (WorldOceano)getWorld();
-        if(this.isTouching(Disparo.class))
+        mundo=(Oceano)getWorld();
+        int tiempo = 4000; // Tiempo entre cada disparo (en milésimas de segundo).
+        
+        if(tDisparo.millisElapsed()>tiempo)
         {
-            mundo.removeObject(this);
+            mundo.addObject(new DispEnemigo(), getX(), getY());
+            tDisparo.mark();
+        }
+    }
+    
+    /**
+     * Vigila si este enemigo ha sido alcanzado por un disparo del jugador, y realiza las acciones correspondientes.
+     */
+    public void reaccionDisparo()
+    {
+        int finNivel=0; // Determina si éste fue el último enemigo requerido para avanzar un nivel.
+        int detLado=Greenfoot.getRandomNumber(2); // Determina de qué lado de la pantalla se hará el respawn de este enemigo.
+        mundo = (Oceano)getWorld();
+        
+        if(this.isTouching(DispMario.class))
+        {
+            if(mundo.dimeHabMario()!=3)
+            {
+                removeTouching(DispMario.class);
+            }
+            finNivel=mundo.enemigoVencido();
+            if(finNivel==0)
+            {
+                if(detLado==0)
+                {
+                    setLocation(2, 2+Greenfoot.getRandomNumber(mundo.ALTM-2));
+                }
+                else
+                {
+                    setLocation(mundo.ANCM-2, 2+Greenfoot.getRandomNumber(mundo.ALTM-2));
+                }
+            }
         }
     }
 }

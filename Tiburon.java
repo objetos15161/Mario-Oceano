@@ -1,55 +1,86 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Tiburon here.
+ * Tiburón. Es el enemigo más débil, se mueve sin dirección determinada.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Ulises Lara, Efrén Macías
+ * @version 30/Nov/2015
  */
-public class Tiburon extends Actor
+public class Tiburon extends Enemigo
 {
-    private WorldOceano mundo;
+    private int avX=2, avY=2; // Qué tanto avanzará el tiburón en x y en y.
+    private Oceano mundo;
     
     public void act() 
     {
-        //sigue();
-        verificaAlcanzado();
+        muevete();
+        verificaOrilla();
+        reaccionDisparo();
     }    
     
-    public void sigue()
+    /**
+     * Movimiento del tiburón.
+     */
+    public void muevete()
     {
-        int xHeroe, yHeroe, vel;
+        setLocation(getX()+avX, getY()+avY);
+    }
+    
+    /**
+     * El tiburón cambiará de dirección al toparse con un borde del mundo.
+     * Su imágen cambiará de acuerdo a la dirección en la que avance.
+     */
+    public void verificaOrilla()
+    {
+        mundo = (Oceano)getWorld();
         
-        vel = 1; //Establece la velocidad con que seguirá al héroe.
-        mundo = (WorldOceano)getWorld();
-        xHeroe = mundo.obtenXDeHeroe();
-        yHeroe = mundo.obtenYDeHeroe();
-        if ( xHeroe > getX() )
-        {
-            setImage("Tiburón Der.png");
-            setLocation( getX()+vel, getY() );
-        }
-        else if ( xHeroe < getX() )
+        if(getX() >= (mundo.ANCM-1))
         {
             setImage("Tiburón Izq.png");
-            setLocation( getX()-vel, getY() );
+            avX=-avX;
         }
-        if ( yHeroe > getY() )
+        if(getY() >= (mundo.ALTM-1))
         {
-            setLocation( getX(), getY()+vel );
+            avY=-avY;
         }
-        else if ( yHeroe < getY() )
+        if(getX() <= 1)
         {
-            setLocation( getX(), getY()-vel );
+            setImage("Tiburón Der.png");
+            avX=-avX;
+        }
+        if(getY() <= 1)
+        {
+            avY=-avY;
         }
     }
     
-    public void verificaAlcanzado()
+    /**
+     * Vigila si este enemigo ha sido alcanzado por un disparo del jugador, y realiza las acciones correspondientes.
+     */
+    public void reaccionDisparo()
     {
-        mundo = (WorldOceano)getWorld();
-        if(this.isTouching(Disparo.class))
+        int finNivel=0; // Determina si éste fue el último enemigo requerido para avanzar un nivel.
+        int detLado=Greenfoot.getRandomNumber(2); // Determina de qué lado de la pantalla se hará el respawn de este enemigo.
+        mundo = (Oceano)getWorld();
+        
+        if(this.isTouching(DispMario.class))
         {
-            mundo.removeObject(this);
+            if(mundo.dimeHabMario()!=3)
+            {
+                removeTouching(DispMario.class);
+            }
+            finNivel=mundo.enemigoVencido();
+            if(finNivel==0)
+            {
+                if(detLado==0)
+                {
+                    setLocation(2, 2+Greenfoot.getRandomNumber(mundo.ALTM-2));
+                }
+                else
+                {
+                    setLocation(mundo.ANCM-2, 2+Greenfoot.getRandomNumber(mundo.ALTM-2));
+                }
+            }
         }
     }
 }

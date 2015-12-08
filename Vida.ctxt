@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment1.params=
+comment1.target=void\ muevete()
+comment1.text=\r\n\ Hace\ caer\ a\ la\ vida\ a\ una\ velocidad\ determinada.\r\n
+comment2.params=
+comment2.target=void\ verificaFondo()
+comment2.text=\r\n\ Quita\ la\ vida\ del\ mundo\ una\ vez\ que\ ha\ alcanzado\ el\ fondo.\r\n
+numComments=3
