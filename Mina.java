@@ -7,9 +7,7 @@ import greenfoot.*;
  * @version 30/Nov/2015
  */
 public class Mina extends Enemigo
-{
-    Oceano mundo;
-    
+{    
     public void act() 
     {
         muevete();
@@ -31,7 +29,7 @@ public class Mina extends Enemigo
      */
     public void verificaFondo()
     {
-        mundo=(Oceano)getWorld();
+        Oceano mundo=(Oceano)getWorld();
         
         if(getY() >= (mundo.ALTM-1))
         {

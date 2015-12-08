@@ -8,9 +8,7 @@ import greenfoot.*;
  * @version 30/Nov/2015
  */
 public class MovRapido extends Bonificacion
-{
-    Oceano mundo;
-    
+{    
     public void act() 
     {
         muevete();
@@ -32,7 +30,7 @@ public class MovRapido extends Bonificacion
      */
     public void verificaFondo()
     {
-        mundo=(Oceano)getWorld();
+        Oceano mundo=(Oceano)getWorld();
         
         if(getY() >= (mundo.ALTM-1))
         {

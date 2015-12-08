@@ -134,7 +134,7 @@ public class Oceano extends World
     {
         contVidas.setValue(mario.dimeVidas());
         contNivel.setValue(nivel);
-        contEne.setValue(eneAVencer-eneVencidos);
+        contEne.setValue((eneAVencer-eneVencidos)+1);
     }
     
     /**
@@ -157,6 +157,7 @@ public class Oceano extends World
     
     /**
      * Método para obtener acceso a la ubicación en 'x' de Mario.
+     * @return Ubicación en 'x' de Mario.
      */
     public int dimeXMario()
     {
@@ -165,6 +166,7 @@ public class Oceano extends World
     
     /**
      * Método para obtener acceso a la ubicación en 'y' de Mario.
+     * @return Ubicación en 'y' de Mario.
      */
     public int dimeYMario()
     {
@@ -173,6 +175,7 @@ public class Oceano extends World
     
     /**
      * Método para obtener acceso a la habilidad actual de Mario.
+     * @return Habilidad actual de Mario.
      */
     public int dimeHabMario()
     {
@@ -182,6 +185,7 @@ public class Oceano extends World
     /**
      * Incrementa el contador de enemigos vencidos y verifica si el jugador ha superado el nivel actual (o ganado el juego).
      * Será llamado cada que el jugador elimine a un enemigo.
+     * @return Regresa 1 si se ha superado el nivel actual, 0 en caso contrario.
      */
     public int enemigoVencido()
     {

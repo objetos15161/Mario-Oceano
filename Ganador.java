@@ -29,6 +29,7 @@ public class Ganador extends World
         if(tiempo.millisElapsed() > 4000)
         {
             Greenfoot.setWorld(new Menu());
+            Menu.musica.stop();
         }
     }
 }

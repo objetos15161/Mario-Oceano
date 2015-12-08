@@ -32,6 +32,7 @@ public class Mario extends Actor
 
     /**
      * Proporciona acceso a la posición en el eje x de Mario.
+     * @return Posición en 'x' de Mario.
      */
     public int dimeX()
     {
@@ -40,6 +41,7 @@ public class Mario extends Actor
 
     /**
      * Proporciona acceso a la posición en el eje y de Mario.
+     * @return Posición en 'y' de Mario.
      */
     public int dimeY()
     {
@@ -48,6 +50,7 @@ public class Mario extends Actor
 
     /**
      * Proporciona acceso a la cantidad de vidas de Mario.
+     * @return Número de vidas de Mario.
      */
     public int dimeVidas()
     {
@@ -56,6 +59,7 @@ public class Mario extends Actor
 
     /**
      * Proporciona acceso a la habilidad actual de Mario.
+     * @return Habilidad equipada de Mario.
      */
     public int dimeHabilidad()
     {

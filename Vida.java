@@ -9,8 +9,6 @@ import greenfoot.*;
  */
 public class Vida extends Bonificacion
 {
-    Oceano mundo;
-    
     public void act() 
     {
         muevete();
@@ -32,7 +30,7 @@ public class Vida extends Bonificacion
      */
     public void verificaFondo()
     {
-        mundo=(Oceano)getWorld();
+        Oceano mundo=(Oceano)getWorld();
         
         if(getY() >= (mundo.ALTM-1))
         {
