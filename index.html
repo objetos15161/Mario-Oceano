@@ -19,19 +19,21 @@
     </section>
 
     <section class="main-content">
-      <h2>
+      <p><img src="https://raw.githubusercontent.com/objetos15161/Mario-Oceano/master/images/T%C3%ADtulo.jpg" alt=""></p>
+
+<h2>
 <a id="objetivo-del-juego" class="anchor" href="#objetivo-del-juego" aria-hidden="true"><span class="octicon octicon-link"></span></a>Objetivo del Juego</h2>
 
-<p>El jugador tendrá que superar una serie de niveles combatiendo enemigos y jugando durante un tiempo determinado.</p>
+<p>El jugador tendrá que superar una tres niveles venciendo enemigos y sin perder sus vidas.</p>
 
 <h2>
 <a id="1-descripción-del-juego" class="anchor" href="#1-descripci%C3%B3n-del-juego" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Descripción del Juego</h2>
 
 <p>El juego tiene lugar bajo el agua y el personaje se desplazara nadando, para esto se utilizará un efecto de movimiento similar al utilizado en el videojuego Super Mario Bros. (en donde el personaje se desplaza lentamente hacia el fondo si no hace uso del botón "nadar", el cual lo eleva una pequeña distancia), esto con el propósito de que el jugador no caiga al fondo del escenario, pues de hacerlo perderá una vida.
- Desde los lados y el fondo del escenario irán apareciendo enemigos, que atacarán al héroe intentando alcanzarlo y/o disparándole (Sección 3). Cada uno de estos enemigos, al ser eliminado, concederá 10 puntos al jugador.
-  El personaje también tendrá la capacidad de disparar para deshacerse de sus enemigos; comenzando el juego con un disparo elemental directamente hacia el frente, pero que podrá mejorarse (Sección 2).
- De la parte superior del escenario caeran a intervalos esferas que pueden ser bonificaciones o minas (podrá saberse según su color).
- El juego no tiene como meta eliminar a un cierto número de enemigos, sino sobrevivir hasta que el reloj (que comenzará en 1:30 min.) llegue a cero, logrando simultáneamente eliminar al mayor número de enemigos, obteninendo el mayor puntaje. El juego también puede terminar antes si el jugador perdiese todas sus vidas. Cuando el tiempo se acabe el jugador avanzará de nivel.
+ Desde los lados del escenario irán apareciendo enemigos, que atacarán al héroe intentando alcanzarlo y/o disparándole (Sección 3). 
+  El personaje también tendrá la capacidad de disparar para deshacerse de sus enemigos; comenzando el juego con un disparo básico que podrá mejorarse (Sección 2).
+ De la parte superior del escenario caeran a intervalos cajas de bonificación o minas (podrá saberse según su imagen).
+ El juego tiene como meta eliminar a un cierto número de enemigos. Cada nivel tendrá un requerimiento de enemigos vencidos para ser superado.
  Así pues, el jugador dispondrá de las teclas de dirección izquierda y derecha, el botón "nadar" (flecha arriba), y de el botón "disparar".</p>
 
 <h2>
@@ -40,31 +42,33 @@
 <p>Los enemigos del juego serán de tres tipos:</p>
 
 <ul>
-<li>TIBURÓN: Este actor se moverá persiguiéndo al personaje, le quitará una vida de tocarlo.</li>
-<li>SUBMARINO MENOR: Este actor se comportará como el tiburón, pero se moverá de manera más lenta y además podrá disparar proyectiles al jugador.
--SUBMARINO MAYOR: Se moverá a la misma velocidad del tiburón y le disparará al héroe de manera más insistente que el submarino menor, pero no hasta que lo haya detectado. Para esto comenzará a moverse aleatoriamente y detectará al jugador cuando esté a su misma altura en el escenario y con orientación hacia él.
+<li>TIBURÓN: <img src="https://raw.githubusercontent.com/objetos15161/Mario-Oceano/master/images/Tibur%C3%B3n%20Der.png" alt=""> Este actor se moverá rebotando en las esquinas del escenario.</li>
+<li>SUBMARINO MENOR: <img src="https://raw.githubusercontent.com/objetos15161/Mario-Oceano/master/images/SubMenor%20Der.png" alt=""> Este actor se comportará como el tiburón, pero comenzará a sequir y disparar al jugador si lo detecta (cuando se encuentre a la misma altura y mirando en dirección hacia él)</li>
+<li>SUBMARINO MAYOR: <img src="https://raw.githubusercontent.com/objetos15161/Mario-Oceano/master/images/SubMayor%20Der.png" alt=""> Seguirá al jugador y le disparará con una frecuencia mayor.
 Las bonificaciones serán las siguientes:</li>
-<li>VIDA: Otorgará una vida al jugador.</li>
-<li>DISPARO RÁPIDO: Duplicará la velocidad del proyectil que dispara el héroe (no son acumulables).</li>
-<li>DISPARO DE REBOTE: El proyectil no desaparecerá al eliminar un enemigo o alcanzar el borde del escenario, sino que rebotará en una dirección aleatoria; desaparecerá al tercer rebote.</li>
-<li>MINA: Está esfera quitará una vida al usuario, pero caerá de arriba del escenario al igual que las bonificaciones.</li>
+<li>VIDA: <img src="https://raw.githubusercontent.com/objetos15161/Mario-Oceano/master/images/Vida.png" alt=""> Otorgará una vida al jugador.</li>
+<li>MOVIMIENTO RÁPIDO: <img src="https://raw.githubusercontent.com/objetos15161/Mario-Oceano/master/images/Caja%201.png" alt=""> El jugador podrá moverse con mayor rápidez por la pantalla.</li>
+<li>DISPARO RÁPIDO: <img src="https://raw.githubusercontent.com/objetos15161/Mario-Oceano/master/images/Caja%202.png" alt=""> Un disparo que avanzará con más rápidez de lo normal por la pantalla. Esta habilidad también reduce el periodo de tiempo entre cada disparo. </li>
+<li>DISPARO PLUS: <img src="https://raw.githubusercontent.com/objetos15161/Mario-Oceano/master/images/Caja%203.png" alt=""> El proyectil no desaparecerá al eliminar un enemigo, solo al alcanzar el borde del escenario. Esta habilidad también permite eliminar minas y disparos enemigos, lo que solo es posible con este tipo de disparo.</li>
+<li>MINA: <img src="https://raw.githubusercontent.com/objetos15161/Mario-Oceano/master/images/Mina.png" alt=""> Está esfera quitará una vida al usuario, pero caerá de arriba del escenario al igual que las bonificaciones.</li>
 </ul>
 
 <h2>
 <a id="3-niveles" class="anchor" href="#3-niveles" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. Niveles</h2>
 
 <ul>
-<li>NIVEL 1: Habrá un máximo de cuatro enemigos en pantalla al mismo tiempo. No estarán presentes los submarinos, el enemigo más fuerte.</li>
-<li>NIVEL 2: Máximo seis enemigos a la vez.</li>
-<li>NIVEL 3: Máximo ocho enemigos a la vez. Dos de cada tres esferas que caigan de arriba serán minas.</li>
-</ul>
-
-<h2>
-<a id="documentación" class="anchor" href="#documentaci%C3%B3n" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentación</h2>
+<li>NIVEL 1: Habrán tres enemigos en pantalla en todo momento: dos tiburones y un submarino menor. No estarán presentes los submarinos mayores, el enemigo más fuerte. Es necesario vencer a siete enemigos cualesquiera para superar este nivel.</li>
+<li>NIVEL 2: Existirán cinco enemigos en pantalla; tres tiburones, un submarino menor y uno mayor. Es necesario vencer a diez enemigos para superarlo.</li>
+<li>NIVEL 3: Existirán seis enemigos en pantalla; Tres tiburones, dos submarinos menores y uno mayor. Es necesario vencer a quince enemigos para superarlo.
+## Documentación
 
 <ul>
-<li><a href="https://www.gliffy.com/go/publish/9299189">Diagrama de Clases</a></li>
-<li><a href="https://github.com/objetos15161/Mario-Oceano/raw/master/Mario-Oceano%202.jar">Archivo Ejecutable</a></li>
+<li><a href="http://www.gliffy.com/go/publish/9613585">Diagrama de Clases</a></li>
+<li><a href="https://github.com/objetos15161/Mario-Oceano/raw/master/Mario-Oceano.jar">Archivo Ejecutable (15.9 MB)</a></li>
+<li><a href="https://www.youtube.com/watch?v=IPDNOuIWM0Y">Vídeo de Demostración</a></li>
+<li>El escenario es demasiado grande para ser publicado en la galería de Greenfoot.</li>
+</ul>
+</li>
 </ul>
 
 <h3>
